@@ -90,24 +90,24 @@
             // console.log(decrypt("dbu"));
 
             //8
-            const colors = ["red", "indigo", "white", "teal", "yellow"];
-            const foods = ["bread", "cheese", "cucumber"];
+            // const colors = ["red", "indigo", "white", "teal", "yellow"];
+            // const foods = ["bread", "cheese", "cucumber"];
 
-            const jumble = function (arr1, arr2) {
-                let jumbledArr = [];
-                arr1 = arr1.concat(arr2);
+            // const jumble = function (arr1, arr2) {
+            //     let jumbledArr = [];
+            //     arr1 = arr1.concat(arr2);
 
-                while (arr1.length !== 0)
-                {
-                    const randIndexItem = Math.floor(Math.random() * arr1.length);
-                    jumbledArr.push(arr1[randIndexItem]);
-                    arr1.splice(arr1.indexOf(arr1[randIndexItem]), 1);
-                }
-                //let jumbledArr = //work with arr1 and arr2
-                return jumbledArr;
-            }
+            //     while (arr1.length !== 0)
+            //     {
+            //         const randIndexItem = Math.floor(Math.random() * arr1.length);
+            //         jumbledArr.push(arr1[randIndexItem]);
+            //         arr1.splice(arr1.indexOf(arr1[randIndexItem]), 1);
+            //     }
+            //     //let jumbledArr = //work with arr1 and arr2
+            //     return jumbledArr;
+            // }
 
-            console.log(jumble(colors, foods)); // could return: ["cheese",teal","cucumber","red","bread","yellow","white","indigo"]
+            // console.log(jumble(colors, foods)); // could return: ["cheese",teal","cucumber","red","bread","yellow","white","indigo"]
 
 
             //9
@@ -137,6 +137,43 @@
             // console.log(getLetter());
 
 
+            //extension 1:
+            // const printInLoop = function(arr){
+            //     while(true){
+            //         for (let f of arr){
+            //             console.log(f);
+            //         }
+            //     }
+            // }
+            // printInLoop(["down", "the", "rabbit", "hole"])
+
+            //extension 3
+            // const secretEncrypt = function (str, cypher) {
+            //     cypher_counter = 0;
+            //     tempArr = [];
+            //     for (let i=0; i< str.length; i++) {
+            //         tempArr.push(String.fromCharCode(str[i].charCodeAt(0)+(cypher[cypher_counter].charCodeAt(0)-96)));
+            //         cypher_counter++;
+            //         if (cypher_counter == cypher.length)
+            //             cypher_counter = 0;
+            //     }
+            //     return tempArr.join("");
+            // }
+            // console.log(secretEncrypt("elephant", "cab")); //should print be hmgsicqu
+
+            //extension 4
+            const secretDecrypt = function (str, cypher) {
+                cypher_counter = 0;
+                tempArr = [];
+                for (let i=0; i< str.length; i++) {
+                    tempArr.push(String.fromCharCode(str[i].charCodeAt(0)-(cypher[cypher_counter].charCodeAt(0)-96)));
+                    cypher_counter++;
+                    if (cypher_counter == cypher.length)
+                        cypher_counter = 0;
+                }
+                return tempArr.join("");
+            }
+            console.log(secretDecrypt("hmgsicqu", "cab")); //should print be elephant
 
             </script>
     </body>
