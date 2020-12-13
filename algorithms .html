@@ -1,0 +1,143 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    </head>
+    <body>
+        <div id="content"></div>
+        <script>
+            let c = $("#content");
+            // // 1.
+            // 
+            // const printStars = function(num){
+            //     for (let i=0; i<num; i++){
+            //         for (let j=0; j<=i; j++){
+            //             c.append("*")
+            //         }
+            //         c.append("<br>")
+            //     }
+            // }
+            // printStars(5)
+
+            // 2.
+            // const printBackwardsStars = function(num){
+            //     for (let i=0; i<num; i++){
+            //         for (let j=num; j>i; j--){
+            //             c.append("*")
+            //         }
+            //         c.append("<br>")
+            //     }
+            // }
+            // printBackwardsStars(5)
+
+            // 3.
+            // const printStarSeries = function(num, count){
+            //     for (let k=0; k<count; k++){
+            //         for (let i=0; i<num; i++){
+            //             for (let j=0; j<=i; j++){
+            //                 c.append("*")
+            //             }
+            //             c.append("<br>")
+            //         }
+            //         for (let i=0; i<num; i++){
+            //             for (let j=num; j>i; j--){
+            //                 c.append("*")
+            //             }
+            //             c.append("<br>")
+            //         }
+            //     }
+            // }
+            // printStarSeries(5, 2);
+
+            // 4.
+            // const reverse = function(str){
+
+            //     let reversed = str.split("").map( (num,index,reverse) => reverse[(reverse.length-1)-index] ).join("");
+
+            //     console.log (reversed);
+            //     return reversed
+            // }
+
+            // reverse("dog") //should return "god"
+            // reverse("race car") //should return "rac ecar"
+
+            // 5.
+            // const isPalindrom = function(str){
+            //     let t = str.toLowerCase().replace(' ', '').split("");
+            //     let valid = true;
+            //     for (let i=0; i<=Math.floor(t.length/2); i++) {
+            //         if (t[i] !== t[t.length-i-1]){
+            //             valid = false;
+            //             break;
+            //         }
+            //     }
+            //     return valid;
+            // };
+            // console.log(isPalindrom("Taco Cat"));
+
+            //6
+            // const encrypt = function (str) {
+            //     return str.split("").map(m => String.fromCharCode(m.charCodeAt(0)+1)).join("");
+            // }
+            // console.log(encrypt("cat"));
+
+            //7
+            // const decrypt = function (str) {
+            //     return str.split("").map(m => String.fromCharCode(m.charCodeAt(0)-1)).join("");
+            // }
+            // console.log(decrypt("dbu"));
+
+            //8
+            const colors = ["red", "indigo", "white", "teal", "yellow"];
+            const foods = ["bread", "cheese", "cucumber"];
+
+            const jumble = function (arr1, arr2) {
+                let jumbledArr = [];
+                arr1 = arr1.concat(arr2);
+
+                while (arr1.length !== 0)
+                {
+                    const randIndexItem = Math.floor(Math.random() * arr1.length);
+                    jumbledArr.push(arr1[randIndexItem]);
+                    arr1.splice(arr1.indexOf(arr1[randIndexItem]), 1);
+                }
+                //let jumbledArr = //work with arr1 and arr2
+                return jumbledArr;
+            }
+
+            console.log(jumble(colors, foods)); // could return: ["cheese",teal","cucumber","red","bread","yellow","white","indigo"]
+
+
+            //9
+            // const rawDist = {
+            //     A: 60,
+            //     B: 10,
+            //     C: 10,
+            //     D: 20
+            // }
+            // const getLetter = function(){
+            //     // let keys = Object.keys(obj);
+            //     // for (let i = 0; i < keys.length; i++) {
+            //     //     let val = obj[keys[i]];
+            //     //     console.log(val);
+            //     // }
+            //     const letter = Math.floor(Math.random() * 101);
+            //     if (letter <=60)
+            //             return "A";
+            //     else if (letter >60 && letter <=70)
+            //             return "B";
+            //     else if (letter >70 && letter <=80)
+            //             return "C";
+            //     else
+            //             return "D";
+
+            // }
+            // console.log(getLetter());
+
+
+
+            </script>
+    </body>
+</html>
