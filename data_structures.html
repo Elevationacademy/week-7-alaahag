@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class UniqueArray {
+            constructor(){
+                this.data = {};
+                this.length = 0;
+            }
+
+            add(item){
+                //Stores the item only if it hasn't been added already
+                if (Object.values(this.data).indexOf(item) === -1)
+                    this.data[this.length++] = item;
+            }
+
+            showAll(){
+                //Shows all the added items
+                console.log(this.data);
+            }
+
+            exists(item){
+                //Returns true if the item has been added, false otherwise
+                //This should run in O( 1 )
+                return Object.values(this.data).indexOf(item) === 0;
+
+            }
+
+            get(index){
+                //Returns the item at index index, or -1 if it doesn't exit
+                return this.data[index];
+            }
+        }
+
+        const uniqueStuff = new UniqueArray();
+        uniqueStuff.add("toy");
+        uniqueStuff.showAll(); //prints ["toy"]
+        uniqueStuff.add("toy");
+        uniqueStuff.showAll() //prints ["toy"]
+        console.log(uniqueStuff.exists("toy")); //returns true
+        uniqueStuff.add("poster");
+        uniqueStuff.add("hydrogen");
+        console.log(uniqueStuff.get(2)); //prints "hydrogen"
+
+    </script>
+</body>
+</html>
