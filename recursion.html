@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <script>
+        //Exercise 1
+        const findFactorial = function(num, sum=num) {
+            if (num !==1){
+                num--;
+                sum = sum * num;
+                return findFactorial(num, sum);
+            }
+            else
+                return(sum);
+        }
+
+        //Exercise 2
+        const reverseString = function(str, newStr="", index=str.length) {
+            if (index !== -1){
+                newStr += str.charAt(index);
+                index--;
+                return reverseString(str, newStr, index);
+            }
+            else
+                return newStr;
+        }
+
+        //Exercise 3
+        const arr1 = [1, 2, 3]
+        const arr2 = []
+
+        const swap = function(arr1, arr2) {
+            if(arr1.length !== 0){
+                arr2.push(arr1[0]);
+                arr1.shift();
+                return swap(arr1, arr2);
+            }
+        }
+
+        //1:
+        //console.log(findFactorial(8));
+
+        //2:
+        //console.log(reverseString("hello"));
+
+        //3:
+        swap(arr1, arr2)
+        console.log(arr1) //[]
+        console.log(arr2) //[1, 2, 3]
+    </script>
+</body>
+</html>
